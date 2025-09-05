@@ -643,13 +643,6 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=$CONFIG_DIR
-ExecStart=$EXECUTABLE_INSTALL_PATH -config ${_config_name}.json server
-User=$HYSTERIA_USER
-Group=$HYSTERIA_USER
-Environment=HYSTERIA_LOG_LEVEL=info
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW
-NoNewPrivileges=true
 
 [Install]
 WantedBy=multi-user.target
